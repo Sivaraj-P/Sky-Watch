@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'home.css' %}" />
+    <link rel="icon" href="{% static 'img/logo.png' %}" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Sky Watch</title>
+  </head>
+  <body>
+    <!-- nav bar -->
+    <nav>
+      <div class="nav-logo">
+        <img src="{% static 'img/logo.png' %}" alt="Logo" />
+      </div>
+      <div class="nav-title">
+        <p>Sky Watch</p>
+      </div>
+    </nav>
+    <!-- search bar -->
+    <div class="head-search">
+      <img
+        src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-earth-history-flaticons-flat-flat-icons-2.png"
+        alt="earth"
+      />
+      <form method="post">
+        {% csrf_token %}
+        <div class="form">
+          <input
+            type="text"
+            placeholder="Enter Area,City,..."
+            name="location"
+            required
+          />
+          <button type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+    <!-- Date Time -->
+    <div class="date-time">
+      <img src="{% static 'img/schedule.png' %}" alt="" />
+      <div class="dt-content">
+        <p id="date">{{present_date}}</p>
+        <p id="time"></p>
+      </div>
+    </div>
+    <!-- design -->
+
+    <div class="design-section">
+      <p>Sun or rain, stay ahead of the game!</p>
+      <img src="{% static 'img/weather.gif' %}" alt="" />
+    </div>
+    <!-- city -->
+    <!-- <div class="states">
+      <div class="report">
+        <div class="place-content">
+          <p class="place">
+            <i class="fa-sharp fa-solid fa-location-dot"></i> Chennai
+          </p>
+          <p class="status">{{chennai_status}}</p>
+        </div>
+        <p class="temp">{{chennai_temp}}&#8451;</p>
+      </div> -->
+    <!-- copy -->
+    <!-- <div class="report">
+        <div class="place-content">
+          <p class="place">
+            <i class="fa-sharp fa-solid fa-location-dot"></i> Delhi
+          </p>
+          <p class="status">{{delhi_status}}</p>
+        </div>
+        <p class="temp">{{delhi_temp}}&#8451;</p>
+      </div>
+      <div class="report">
+        <div class="place-content">
+          <p class="place">
+            <i class="fa-sharp fa-solid fa-location-dot"></i> Kolkata
+          </p>
+          <p class="status">{{kolkata_status}}</p>
+        </div>
+        <p class="temp">{{kolkata_temp}}&#8451;</p>
+      </div>
+      <div class="report">
+        <div class="place-content">
+          <p class="place">
+            <i class="fa-sharp fa-solid fa-location-dot"></i> Mumbai
+          </p>
+          <p class="status">{{mumbai_status}}</p>
+        </div>
+        <p class="temp">{{mumbai_temp}}&#8451;</p>
+      </div>
+    </div> -->
+    <footer>
+      <div class="social">
+        <a target="_blank" href="https://github.com/Sivaraj-P"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+        <a target="_blank" href="https://linkedin.com/in/sivarajpaldurai"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+        <a target="_blank" href="mailto:sivarajpauldurai@gmail.com"
+          ><i class="fa-solid fa-envelope"></i
+        ></a>
+      </div>
+      <div class="developer">
+        <p>Developed by Sivaraj P</p>
+      </div>
+    </footer>
+    <!-- JS -->
+    <script>
+      let time = document.getElementById("time");
+      setInterval(() => {
+        let d = new Date();
+        time.innerText = d.toLocaleTimeString();
+      }, 1000);
+    </script>
+  </body>
+</html>

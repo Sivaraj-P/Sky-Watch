@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'report.css' %}" />
+    <link rel="icon" href="{% static 'img/logo.png' %}" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Weather Report</title>
+  </head>
+  <body>
+    <a href="{% url 'home' %}"
+      ><i class="fa-solid fa-magnifying-glass"></i> Back to Home</a
+    >
+
+    <div class="report">
+      <div class="search-location">
+        <div class="location">
+          <p class="date">{{date}}</p>
+          <p class="location-temp">{{temp}}&#8451;</p>
+          <p class="location-name">{{city_name}}</p>
+          <p class="status"><i class="fa-solid fa-cloud"></i> {{status}}</p>
+        </div>
+        <div class="location-image">
+          <img src="http://openweathermap.org/img/wn/{{icon}}@2x.png" />
+          <p class="status">
+            <i class="fa-regular fa-bell"></i> {{weather}},{{description}}
+          </p>
+        </div>
+      </div>
+      <!-- Levels -->
+      <div class="levels">
+        <div class="row">
+          <div class="level-result">
+            <i class="fa-solid fa-sun"></i>
+            <p>Sunrise</p>
+            <p class="value">{{sunrise}}</p>
+          </div>
+          <div class="level-result">
+            <i class="fa-regular fa-sun"></i>
+            <p>Sunset</p>
+            <p class="value">{{sunset}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="level-result">
+            <i class="fa-solid fa-wind"></i>
+            <p>Wind</p>
+            <p class="value">{{wind}}km/hr</p>
+          </div>
+          <div class="level-result">
+            <i class="fa-solid fa-temperature-low"></i>
+            <p>Humidity</p>
+            <p class="value">{{humidity}}%</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="level-result">
+            <i class="fas fa-compass"></i>
+            <p>Direction</p>
+            <p class="value">{{degree}}<sup>o</sup></p>
+          </div>
+          <div class="level-result">
+            <i class="fa-solid fa-cloud"></i>
+            <p>Cloud</p>
+            <p class="value">{{cloud}}%</p>
+          </div>
+        </div>
+      </div>
+      <!-- Table -->
+      <div class="table">
+        <!-- Table icons -->
+        <div class="table-row">
+          <p class="date"><i class="fa-regular fa-calendar-days"></i></p>
+          <p class="time"><i class="fa-solid fa-clock"></i></p>
+          <p class="min-temp">
+            <i class="fa-solid fa-temperature-arrow-down"></i>
+          </p>
+          <p class="max-temp">
+            <i class="fa-solid fa-temperature-arrow-up"></i>
+          </p>
+          <p><i class="fa-solid fa-magnifying-glass"></i></p>
+        </div>
+        <!-- Table-content -->
+        <div class="table-row">
+          <p class="date">{{date1}}</p>
+          <p class="time">{{time1}}</p>
+          <p class="min-temp">{{temp_min1}}&#8451;</p>
+          <p class="max-temp">{{temp_max1}}&#8451;</p>
+          <img
+            src="http://openweathermap.org/img/wn/{{icon}}@2x.png"
+            alt=""
+            width="30"
+            height="30"
+          />
+        </div>
+        <!-- copy -->
+        <div class="table-row">
+          <p class="date">{{date2}}</p>
+          <p class="time">{{time2}}</p>
+          <p class="min-temp">{{temp_min2}}&#8451;</p>
+          <p class="max-temp">{{temp_max2}}&#8451;</p>
+          <img
+            src="http://openweathermap.org/img/wn/{{icon}}@2x.png"
+            alt=""
+            width="30"
+            height="30"
+          />
+        </div>
+        <div class="table-row">
+          <p class="date">{{date3}}</p>
+          <p class="time">{{time3}}</p>
+          <p class="min-temp">{{temp_min3}}&#8451;</p>
+          <p class="max-temp">{{temp_max3}}&#8451;</p>
+          <img
+            src="http://openweathermap.org/img/wn/{{icon}}@2x.png"
+            alt=""
+            width="30"
+            height="30"
+          />
+        </div>
+        <div class="table-row">
+          <p class="date">{{date4}}</p>
+          <p class="time">{{time4}}</p>
+          <p class="min-temp">{{temp_min4}}&#8451;</p>
+          <p class="max-temp">{{temp_max4}}&#8451;</p>
+          <img
+            src="http://openweathermap.org/img/wn/{{icon}}@2x.png"
+            alt=""
+            width="30"
+            height="30"
+          />
+        </div>
+        <div class="table-row">
+          <p class="date">{{date5}}</p>
+          <p class="time">{{time5}}</p>
+          <p class="min-temp">{{temp_min5}}&#8451;</p>
+          <p class="max-temp">{{temp_max5}}&#8451;</p>
+          <img
+            src="http://openweathermap.org/img/wn/{{icon}}@2x.png"
+            alt=""
+            width="30"
+            height="30"
+          />
+        </div>
+        <div class="table-row">
+          <p class="date">{{date6}}</p>
+          <p class="time">{{time6}}</p>
+          <p class="min-temp">{{temp_min6}}&#8451;</p>
+          <p class="max-temp">{{temp_max6}}&#8451;</p>
+          <img
+            src="http://openweathermap.org/img/wn/{{icon}}@2x.png"
+            alt=""
+            width="30"
+            height="30"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

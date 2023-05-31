@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito:wght@600&family=Poppins:wght@500&family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #131e32;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+a {
+  margin: 20px;
+  font-size: 15px;
+  text-decoration: none;
+  color: #d4d4de;
+  transition: all 0.5s ease;
+}
+a:hover {
+  color: #f46a47;
+}
+.report {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.search-location {
+  margin: 15px;
+  height: 200px;
+  width: 80%;
+  border-radius: 30px;
+  color: #d4d4de;
+  background: linear-gradient(45deg, #162a4d, #172b4e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.location {
+  margin: 20px;
+}
+.location p {
+  margin: 5px;
+  font-size: 15px;
+}
+.location .location-temp {
+  font-size: 30px;
+}
+.location-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.location-image img {
+  width: 100px;
+  height: 100px;
+}
+.levels {
+  margin: 15px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+  height: 200px;
+  border-radius: 30px;
+  background-color: #172b4e;
+}
+
+.level-result {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.level-result i {
+  color: #f46a47;
+  font-size: 20px;
+}
+.level-result p {
+  color: #6a9cff;
+  font-size: 12px;
+}
+.table {
+  margin: 15px;
+  width: 80%;
+  height: 350px;
+  background: linear-gradient(45deg, #162a4d, #172b4e);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.table-row {
+  margin: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.table-row p {
+  color: #d4d4de;
+  font-size: 15px;
+}
+.table-row img {
+  padding: 2px;
+}
+@media (max-width: 400px) {
+  .search-location .status {
+    font-size: 12px;
+  }
+}
